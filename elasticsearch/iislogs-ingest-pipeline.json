@@ -1,0 +1,17 @@
+{
+  "description" : "Pipeline to override the @timestamp with IIS logs date and time",
+  "processors" : [
+    {
+      "set": {
+        "field": "datetime",
+        "value": "{{date}} {{time}}"
+      }
+    },
+    {
+      "date" : {
+        "field" : "datetime",
+        "formats" : ["yyyy-MM-dd HH:mm:ss"]
+      }
+    }
+  ]
+}

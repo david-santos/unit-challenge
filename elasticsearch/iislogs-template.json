@@ -1,0 +1,86 @@
+{
+  "index_patterns": ["iislogs*"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "properties": {
+      "date": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "cs-method": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "cs-uri-stem": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "cs-uri-query": {
+        "norms": false,
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          }
+        }
+      },
+      "cs-user-agent": {
+        "norms": false,
+        "fields": {
+          "keyword": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "sc-substatus": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "cs-username": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "time-taken": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "sc-win32-status": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "datetime": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "s-ip": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "cs-referer": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "sc-status": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "s-port": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "time": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      },
+      "c-ip": {
+        "ignore_above": 1024,
+        "type": "keyword"
+      }
+    }
+  }
+}
