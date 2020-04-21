@@ -30,12 +30,13 @@ This is a description of the main steps taken to solve the challenge.
   * Use the index lifecycle management (ILM) feature in Elasticsearch
   * Not touch the index template
   * Use an ingest pipeline in Elasticsearch
-<br/>Full configuration file is available [here](functionbeat/functionbeat.yml).
+
+Full configuration file is available [here](functionbeat/functionbeat.yml).
 
 #### Elastic Cloud
 
 1. Created a template for all `iislogs*` indexes in Elasticsearch.
-<br/>Source code is available [here](elasticsearch/iislogs-template.json).
+<br/>Source code is available [here](elasticsearch/iislogs-index-template.json).
 
 2. Created an ingest pipeline to set the IIS date and time (present in the log file that is uploaded) as the `@timestamp` field for the Elasticsearch documents.
 <br/>Source code is available [here](elasticsearch/iislogs-ingest-pipeline.json).
