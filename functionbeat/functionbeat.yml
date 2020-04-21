@@ -15,12 +15,12 @@
 # Configure which S3 endpoint should we use.
 functionbeat.provider.aws.endpoint: "s3.amazonaws.com"
 # Configure which S3 bucket we should upload the lambda artifact.
-functionbeat.provider.aws.deploy_bucket: "my-functionbeat-deploy"
+functionbeat.provider.aws.deploy_bucket: "iislogs-functionbeat-deploy"
 
 functionbeat.provider.aws.functions:
   # Define the list of function availables, each function required to have a unique name.
   # Create a function that accepts events coming from cloudwatchlogs.
-  - name: cloudwatch-to-elk
+  - name: iislogs-functionbeat
     enabled: true
     type: cloudwatch_logs
 
@@ -56,7 +56,7 @@ functionbeat.provider.aws.functions:
 
     # List of cloudwatch log group registered to that function.
     triggers:
-      - log_group_name: /aws/lambda/s3-to-cloudwatch
+      - log_group_name: /aws/lambda/iislogs-importer
         #filter_pattern: mylog_
 
     # Define custom processors for this function.
